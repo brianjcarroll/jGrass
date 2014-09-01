@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'styles/build/global.css': 'styles/sass/global.scss'
+                    'styles/build/global.css': 'styles/sass/*.scss'
                 }
             }
         },
