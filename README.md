@@ -6,9 +6,8 @@
 <h3>Getting Started</h3>
 <p>Being a boilerplate, there's not much to it to get started.  Follow these steps in order:</p>
 <ul>
-  <li>Open Terminal and install Grunt globally with this command: <pre>npm install -g grunt-cli</pre></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li>Open Terminal and run this command: <pre>npm install -g grunt-cli</pre></li>
+  <li>Then clone this repo: <pre>git clone https://github.com/brianjcarroll/jGrass.git</pre></li>
+  <li>Open the repo in your text editor of choice</li>
+  <li>Start building!</li>
+</ul>
