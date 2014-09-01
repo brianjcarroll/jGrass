@@ -3,13 +3,47 @@ module.exports = function(grunt) {
     // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        sass: {
+            dist: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'styles/build/global.css': 'styles/sass/global.scss'
+                }
+            }
+        },
 
         autoprefixer: {
             dist: {
                 files: {
-                    'build/style.css': 'style.css'
+                    'styles/build/global.css': 'styles/build/global.css'
                 }
             }
+        },
+
+        watch: {
+          scripts: {
+              files: ['js/*.js'],
+              tasks: ['concat', 'uglify'],
+              options: {
+                  spawn: false,
+              }
+          },
+
+          css: {
+            files: ['styles/sass/*.scss'],
+            tasks: ['sass', 'autoprefixer'],
+            options: {
+                spawn: false,
+            }
+          },
+
+          styles: {
+              files: ['styles/build/global.css'],
+              tasks: ['autoprefixer']
+          }
+
         },
 
         concat: {
@@ -27,42 +61,6 @@ module.exports = function(grunt) {
               src: 'js/build/production.js',
               dest: 'js/build/production.min.js'
           }
-        },
-
-        sass: {
-          dist: {
-              options: {
-                  style: 'compressed'
-              },
-              files: {
-                  'styles/build/global.css': 'styles/global.scss'
-              }
-          }
-        },
-
-        watch: {
-
-          scripts: {
-              files: ['js/*.js'],
-              tasks: ['concat', 'uglify'],
-              options: {
-                  spawn: false,
-              }
-          },
-
-          css: {
-              files: ['styles/sass/*.scss'],
-              tasks: ['sass'],
-              options: {
-                  spawn: false,
-              }
-          },
-
-          styles: {
-              files: ['styles/build/global.css'],
-              tasks: ['autoprefixer']
-          }
-
         },
 
         imagemin: {
@@ -87,6 +85,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['autoprefixer', 'concat', 'uglify', 'watch', 'sass', 'imagemin']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'concat', 'uglify', 'watch', 'imagemin']);
 
 };

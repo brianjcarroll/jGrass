@@ -1,5 +1,47 @@
-$test: #e3e3e3;
+$beige: #fbfbfa;
+$grey: #e3e3e3;
+$white: white;
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
-  background-color: $test;
+
+}
+
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $beige;
+  transition: 3s;
+
+}
+
+.header {
+
+}
+
+.site-title {
+  border: 3px solid $grey;
+
+}
+
+.main-navigation {
+  border-radius: 2px;
+}
+.main {
+  transition: 2s;
+  border-radius: 1px;
+}
+
+.footer {
+  background-color: $grey;
+
 }
