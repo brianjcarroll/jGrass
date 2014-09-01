@@ -1,0 +1,11 @@
+@mixin flexbox($flex: flex) {
+  display: $flex;
+}
+
+@mixin transition($property, $time, $method) {
+  transition: $property $time $method;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}

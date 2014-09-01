@@ -1,6 +1,9 @@
-$beige: #fbfbfa;
-$grey: #e3e3e3;
-$white: white;
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
+@import 'variables';
+@import 'mixins';
+@import 'extensions';
 
 
 html {
@@ -21,6 +24,8 @@ body {
   padding: 20px;
   background-color: $beige;
   transition: 3s;
+
+
 
 }
 

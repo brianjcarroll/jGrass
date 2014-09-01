@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'styles/build/global.css': 'styles/sass/*.scss'
+                    'styles/build/global.css': 'styles/sass/global.scss'
                 }
             }
         },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
           },
 
           css: {
-            files: ['styles/sass/*.scss'],
+            files: ['styles/sass/global.scss'],
             tasks: ['sass', 'autoprefixer'],
             options: {
                 spawn: false,
